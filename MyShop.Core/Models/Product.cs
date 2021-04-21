@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace MyShop.Core.Models
 {
-    public class Product
+    public class Product : BaseEntity
     {
-        public string Id { get; set; }
+        
 
         [StringLength(20)] //set Name length to 20 char
         [DisplayName("Product Name")] //Will display Product Name on UI
@@ -22,10 +22,10 @@ namespace MyShop.Core.Models
         public string Category { get; set; }
         public string Image { get; set; }
 
-        //constructor - everytime we create an instances of product we auto generate an ID
-        public Product()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
+        //constructor - everytime we create an instances of product we auto generate an ID. This is being handled in BaseEntity Class
+        //public Product()
+        //{
+        //    this.Id = Guid.NewGuid().ToString();
+        //}
     }
 }
