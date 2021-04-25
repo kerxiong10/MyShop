@@ -134,11 +134,11 @@ namespace MyShop.Services
                 int? basketCount = (from item in basket.BasketItems
                                     select item.Quanity).Sum();
 
-                decimal? baskettotal = (from item in basket.BasketItems
+                decimal? basketTotal = (from item in basket.BasketItems
                                         join p in productContext.Collection() on item.ProductId equals p.Id
                                         select item.Quanity*p.Price).Sum();
                 model.BasketCount = basketCount ?? 0; //if there is a basketcount return that value. if it is null return a 0
-                model.BasketTotal = baskettotal ?? decimal.Zero; //if there is a baskettotal return that value. if it is null return a 0
+                model.BasketTotal = basketTotal ?? decimal.Zero; //if there is a baskettotal return that value. if it is null return a 0
 
                 return model;
             }
