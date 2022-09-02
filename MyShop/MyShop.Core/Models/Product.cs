@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace MyShop.Core.Models
 {
-    public class Product
+    public class Product : BaseEntity
     {
-        public string Id { get; set; }
+        //public string Id { get; set; } removed because we already have ID in Base Entity
 
         [StringLength(20)]
         [DisplayName("Product Name")]
@@ -22,9 +22,9 @@ namespace MyShop.Core.Models
         public string Category { get; set; }//group product by different categories
         public string Image { get; set; }
 
-        public Product()//this is so everytime we create an instance of Product class, it auto generates an ID
-        {
-            this.Id = Guid.NewGuid().ToString(); //generate a new ID everytime and convert to an string ID
-        }
+        //public Product()//this is so everytime we create an instance of Product class, it auto generates an ID
+        //{
+        //    //this.Id = Guid.NewGuid().ToString(); //generate a new ID everytime and convert to an string ID. //removed in 65 video because in Base Entity
+        //}
     }
 }

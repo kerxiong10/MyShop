@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace MyShop.Core.Models
 {
-    public class ProductCategory
+    public class ProductCategory : BaseEntity
     {
-        public string Id { get; set; }
+        //public string Id { get; set; } //removed per video 65. Created in Base Entity
         public string Category { get; set; }
 
-        public ProductCategory()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
+        //public ProductCategory() //removed per video 65. Created in Base Entity
+        //{
+        //    this.Id = Guid.NewGuid().ToString();
+        //}
     }
 }
